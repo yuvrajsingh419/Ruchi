@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>creation of a food website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        font-family: 'poppins',sans-serif;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    p
+    {
+        font-weight: 300;
+        color: rgb(9, 14, 20);
+    }
+    .banner{
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        background:url(https://live.staticflickr.com/65535/48692488766_3787f947e7_w.jpg);
+        background-size: cover;
+    }
+    .banner.content{
+        max-width: 900px;
+        text-align: center;
+    }
+    .banner.content h2
+    {
+        font-size: 5cm;
+        color:white;
+    }
+    .banner.content p{
+        font-size: 1cm;
+        color: #fff;
+    }
+
+    
+    
+    .btn
+    {
+        font-size: 1em;
+        color: #fff;
+        background: #ff0157;
+        display: inline-block;
+        padding: 10px 30px;
+        margin-top: 20px;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 2px;
+        transition: 0.5s;
+    }
+    .btn:hover
+    {
+        letter-spacing: 6px;
+
+    }
+    header
+    {
+        position: fixed;
+        top:0 ;
+        width: 100px;;
+        left: 0;
+        padding: 40px 100px;
+        z-index: 10000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.5s;
+    }
+    header.sticky{
+        background:#fff ;
+        padding: 10px, 100px;
+        box-shadow: 0, 5px ,20px rgba(0,0,0,0.05);
+    }
+    header .logo
+    {
+        color: #fff;
+        font: size 2px; ;
+        font: weight 700px; ;
+        text-decoration:none ;
+    }
+    header.sticky.logo{
+        color: rgb(136, 160, 50);
+    }
+
+    header .logo span
+    {
+        color: #ff0157;
+
+    }
+    header .navigation{
+        position: relative;
+        display: flex;
+    }
+    header .navigation li{
+        list-style: square ;
+        margin-left:30px ;
+    }
+    header .navigation li a{
+        text-decoration: none;
+        color: rgb(61, 202, 42);
+        font-weight: 300px;
+    }
+    header.sticky.navigation li a{
+        color: rgb(182, 21, 21);
+    }
+    header .navigation li a:hover{
+        color: #ff0157;
+    }
+    section{
+        padding: 100px;
+    }
+    .row{
+        position:relative ;
+        width:100px ;
+        display:inline ;
+        justify-content:space-between ;
+    }
+    .row.co150{
+        position: absolute;
+        width: 48px;
+    }
+    .titletext{
+        font: size 10cm; ;
+        font-weight: 500;
+    }
+    .titletext span{
+        color: #ff0157;
+        font-size: 1cm;
+        font-weight: 700;
+    }
+    .row .co150 .imgbx{
+        position:relative ;
+        width:100px ;
+        min-height:30px ;
+
+    }
+    .title{
+        width: 100px; 
+        display:flex ;
+        justify-content:center ;
+        align-items: center;
+        flex-direction: row;
+    }
+    .menu .content{
+        display: block;
+        /* align-items: center; */
+        justify-content: center;
+        flex-direction:row-reverse;
+        flex-wrap:wrap ;
+        margin-top: 40px;
+    }
+    /* .menu .content .box{ */
+        /* width: 340px; ; */
+        /* margin: 20px; */
+        /* border:5px solid black ; */
+        /* box-shadow: 0 5px 35px rgba(0,0,0,0.08); 
+    } */
+
+
+    /* .menu .content .box .imgbx{ */
+        /* width: 100%; */
+        /* position:relative ; */
+        /* height: 300px; 
+
+    }  */
+    /* .menu .content .box .imgbx img{ */
+        /* position: absolute; */
+        /* top: 0px; */
+        /* left: 0px; */
+        /* width:100% ; */
+        /* height:100% ; */
+        /* object-fit: cover; 
+    } */
+    /* .menu .content .box .text{ */
+        /* padding: 15px 0px 5px; }*/
+    
+    /* .menu .content .box .text h3{ */
+        /* font-weight:400 ; */
+        /* color: blue;  } */
+   
+    .title{
+        width: 100px; 
+        display:flex ;
+        justify-content:center ;
+        align-items: center;
+        flex-direction: row;
+    }
+    .Expert .content{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        flex-direction:row;
+        flex-wrap:wrap ;
+        margin-top: 40px;
+        position: relative;
+    }
+    .Expert .content .box{
+        width: 250px; ;
+        margin: 15px;
+        /* border:5px solid black ; */
+        /* box-shadow: 0 5px 35px rgba(0,0,0,0.08); */
+    }
+    .Expert .content .box .imgbx{
+        width: 800px;
+        position:relative ;
+        height: 300px; 
+        display: block;
+
+    }
+    .Expert .content .box .imgbx img{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width:100% ;
+        height:100% ;
+        object-fit: cover;
+    }
+    .Expert .content .box .text{
+        padding: 15px 0px 5px;
+    }
+    .Expert .content .box .text h3{
+        font-weight:400 ;
+        color: blue;
+    }
+
+    .box1 img{
+        width: 750px;
+    }
+
+    .box2 img{
+        width: 500px;
+       
+    }
+
+    .imgbx{
+        display: block;
+    }
+    .content .imgbx{
+        display: block;
+    }
+   
+    .contactform{
+    
+        padding: 0 35px;
+        /* padding-top: 100px; */
+        /* font-family: 'Edu TAS Beginner', sans-serif; */
+       
+        margin:88px;
+    }
+
+    .contactform .inputbox{
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    .contactform  input{
+        /* width: 26vw; */
+        border-radius: 5px;
+        margin: 6px 0 0 0;
+        padding: 3px;
+    }
+
+    .imgbx .box2{
+        display: block;
+    }
+
+    
+</style>
+<body>
+    <header>
+        <h1> <span> FOOD</span>
+        </h1>
+        <a href="#" class="logo"> </a>
+        <ul class="navigation">
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#expert">Expert</a></li>
+            <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+            <li><a href="#contact">Contact</a></li>
+
+
+
+
+        </ul>
+    </header>
+    <section class="banner" id="banner">
+        <div class="content">
+            <h2>Always Choose Good</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo maxime eum illum sapiente fugit, officiis asperiores quas error maiores accusamus libero perspiciatis non inventore fugiat impedit corrupti, voluptate reiciendis.</p>
+            <a href="#" class ="btn"> Our Menu </a>
+        </div>
+    </section>
+    <section class="about" id ="about">
+        <div class="row">
+        <div class="co150">
+        <h2 class= "titletext"><span>About us</span></h2>
+        <P>Eating a wide variety of healthy foods helps to keep you in good health and protects you against chronic disease. 
+            Eating a well-balanced diet means eating a variety of foods from each of the 5 food groups daily, in the recommended amounts. 
+            It is also important to choose a variety of foods from within each food group. 
+            Takeaway foods, cakes, biscuits and soft drinks are examples of foods usually high in saturated fat, added salt or added sugars. They should be considered as extras to your usual diet and only eaten occasionally and in small amounts.
+            The recommended number of serves for each food group is different for children, teenagers, women and men.</P>
+        </div>
+
+            <div class="box1">
+                <img src="https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000 60px" >
+            </div>
+<!--         
+        <div class="co150">
+            <div class="imgbx">
+                <div class="box">
+            
+            <img src="https://img.freepik.com/premium-photo/big-hamburger-with-double-beef-french-fries_252907-8.jpg?w=2000 60px">
+        </div>
+        </div>
+    </div> -->
+    </section>
+    <h2 class="titletext"><span>OUR MENU</span></h2>
+    <section class="menu" id="menu">
+        <div class="title">
+       
+        <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate vero iure dolore, ab possimus laboriosam. Molestiae atque voluptatem cumque consequatur a architecto corporis delectus aperiam sit ut, eveniet, soluta totam!</p> -->
+    </div>
+         <div class="content">
+            <div class="imgbx">
+             <div class="box2">
+                <img src="https://media.istockphoto.com/photos/bowl-of-salad-on-white-picture-id500121583?k=20&m=500121583&s=612x612&w=0&h=K-Kh8IZZj4qAArarTqqEVZI3p81V_OSc083YQTFiES8=">
+             </div>
+             <div class="text">
+            <h3>special salads= 60rs</h3>
+             </div>
+            </div>
+            <div class="imgbx">
+                <div class="box2">
+                   <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-220611-esquite-soup-004-ab-web-1658333742.jpg">  
+                </div>
+                <div class="text">
+               <h3>soup = Rs 50</h3>
+                </div>
+            </div>
+            <div class="imgbx">
+                <div class="box2">
+                   <img src="http://cookwithnabeela.com/wp-content/uploads/2021/08/Chicken_Pasta_Web_1.jpg" >  
+                </div>
+                <div class="text">
+               <h3>pasta special =70rs</h3>
+                </div>
+            </div>
+            <div class="imgbx">
+                <div class="box2">
+                  <img src="https://cdn.pixabay.com/photo/2020/05/17/04/22/pizza-5179939__340.jpg">
+                </div>
+                <div class="text">
+               <h3>pizza special =120rs</h3>
+                </div> 
+            </div>
+    </section>
+    <section class="Expert" id="expert">
+        <h2 class="titletext"> <span> Our Cooking Expert</span></h2> 
+        <div class="title">
+         
+            <!-- <p>Lorem ipsum dolor sit, -->
+                 <!-- amet consectetur adipisicing elit. -->
+                  <!-- At aliquid maiores enim in alias temporibus corporis obcaecati, numquam, non error fugiat ea accusantium optio veritatis quasi eum voluptas unde blanditiis?</p> -->
+        </div>
+        <div class="content">
+            <div class="imgbx">
+                <div class="box3">
+                    <img src="https://media.istockphoto.com/photos/mastering-new-culinary-heights-picture-id951132442?k=20&m=951132442&s=612x612&w=0&h=IHdvqGbl-8ipkVH1Fn7vj_me_800kEFf-_k-jmmtCy8= ">
+                </div>
+           <div class="text">
+            <h3>someone famous</h3> 
+            </div>
+        <div class="content">
+            <div class="imgbx">
+                <div class="box3">
+                    <img src="https://img.freepik.com/free-photo/woman-chef-cooking-vegetables-pan_1303-22293.jpg?size=626&ext=jpg">
+                </div>
+            <div class="text">
+            <h3>lady expert</h3> 
+            </div>
+        <div class="content">
+            <div class="imgbx">
+                <div class="box3">
+                    <img src=" https://img.freepik.com/free-photo/young-couple-cooking-home_23-2148869612.jpg?size=626&ext=jpg">
+                </div>
+            <div class="text">
+            <h3>Couple cooking</h3> 
+            </div>
+    </section>
+    <section class="Contact" id="contact">
+        <h2 class="titletext"><span>Contact Me</span></h2> 
+        <div class="title">
+            
+            
+            <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus natus saepe nihil esse aut eligendi nostrum fuga quidem iusto, nulla debitis exercitationem, deleniti expedita ratione praesentium. Doloribus accusantium officia expedita.</p> -->
+        </div>
+        <div class="contactform">
+        <h3> send message</h3>
+        <div class="inputbox">
+          <input type="text" placeholder="name">
+        </div>
+        <div class="inputbox">
+            <input type="text" placeholder="email">
+          </div>
+          <div class="inputbox">
+            <input type="text" placeholder="other related name"></textarea>
+          </div>
+          <div class="inputbox">
+            <input type="submit" value="send">
+          </div>
+        </div>
+    </section>    
+    <script type="text/javascript">
+        window.addEventListener('scroll',function(){
+            const header=document .queryselector('header');
+            header. classlist. toggle("sticky" ,window .scrolly>0);
+
+        });
+    </script>
+</body>
+</html>
